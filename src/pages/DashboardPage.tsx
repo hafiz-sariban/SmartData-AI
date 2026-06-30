@@ -54,7 +54,7 @@ export function DashboardPage() {
       >
         <h1 className="text-2xl font-bold text-white">Dashboard</h1>
         <p className="text-surface-400 text-sm">
-          Welcome to SmartData AI — Turn Data into Smarter Actions
+          Welcome to DataBijak AI — Turn Data into Smarter Actions
         </p>
       </motion.div>
 

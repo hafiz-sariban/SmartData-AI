@@ -15,7 +15,7 @@ export function ChatWidget({ isOpen, onClose }: { isOpen: boolean; onClose: () =
     {
       id: 'welcome',
       role: 'assistant',
-      content: 'Hello! I am your SmartData AI CMO. Ask me about sales strategies, customer segmentation, or your data.',
+      content: 'Hello! I am your DataBijak AI CMO. Ask me about sales strategies, customer segmentation, or your data.',
       created_at: new Date().toISOString(),
     },
   ]);

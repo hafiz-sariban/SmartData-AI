@@ -49,7 +49,7 @@ export function Sidebar({ onChatToggle }: { onChatToggle: () => void }) {
               className="overflow-hidden"
             >
               <h1 className="text-sm font-bold text-white leading-tight">
-                SmartData AI
+                DataBijak AI
               </h1>
               <p className="text-[10px] text-surface-400 leading-tight">
                 Turn Data into Smarter Actions
