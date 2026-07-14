@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, ZAxis } from 'recharts';
 import { BrainCircuit, Users, TrendingUp, Clock, DollarSign, ShoppingCart } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import { RoiMarketerDashboard } from '../components/RoiMarketerDashboard';
 
 interface Segment {
   id: string;
@@ -315,6 +316,9 @@ export function AnalysisHubPage() {
           </table>
         </div>
       </motion.div>
+
+      {/* ROI-Driven Data Marketer — Closed-Loop Revenue Recovery */}
+      <RoiMarketerDashboard />
     </div>
   );
 }
