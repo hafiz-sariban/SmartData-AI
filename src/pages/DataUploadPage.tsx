@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Upload, FileSpreadsheet, CheckCircle2, Circle, Loader2, ArrowRight, Download, Sparkles } from 'lucide-react';
+import { Upload, FileSpreadsheet, CheckCircle2, Circle, Loader2, ArrowRight, Download, Sparkles, MessageSquare } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import Papa from 'papaparse';
 
@@ -50,6 +50,7 @@ export function DataUploadPage() {
   const [agentStates, setAgentStates] = useState<Agent[]>(agents);
   const [completed, setCompleted] = useState(false);
   const [recordsCount, setRecordsCount] = useState(0);
+  const [customPrompt, setCustomPrompt] = useState('');
 
   const handleDrag = useCallback((e: React.DragEvent) => {
     e.preventDefault();
@@ -125,6 +126,7 @@ export function DataUploadPage() {
     setProcessing(false);
     setCompleted(false);
     setAgentStates(agents.map(a => ({ ...a, status: 'pending' })));
+    setCustomPrompt('');
   };
 
   return (
@@ -222,6 +224,54 @@ export function DataUploadPage() {
                 Cancel
               </button>
             </div>
+
+            {/* Custom Analysis Instructions */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className={`rounded-2xl border bg-surface-900/50 p-5 transition-all duration-300 ${
+                processing
+                  ? 'border-surface-800 opacity-60'
+                  : 'border-surface-800'
+              }`}
+            >
+              <div className="flex items-start gap-3 mb-3">
+                <div className="w-9 h-9 rounded-lg bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center flex-shrink-0">
+                  <MessageSquare className="w-4 h-4 text-brand-blue" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-sm font-semibold text-white">
+                    Custom Analysis Instructions (Optional)
+                  </h3>
+                  <p className="text-xs text-surface-400 mt-1 leading-relaxed">
+                    Leave blank to let our AI agents autonomously audit and map out your data trends based on standardized retail performance benchmarks. Alternatively, type specific requirements below.
+                  </p>
+                </div>
+              </div>
+              <textarea
+                value={customPrompt}
+                onChange={(e) => setCustomPrompt(e.target.value.slice(0, 500))}
+                disabled={processing}
+                placeholder="e.g., Focus heavily on our weekend product performance, identify our highest-churning customer pockets, or analyze cross-selling trends for the current holiday quarter..."
+                className={`w-full rounded-xl border bg-surface-950/50 px-4 py-3 text-sm text-white placeholder:text-surface-600 resize-none transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-blue/40 focus:border-brand-blue/60 ${
+                  processing
+                    ? 'border-surface-800 cursor-not-allowed'
+                    : 'border-surface-700 hover:border-surface-600'
+                }`}
+                rows={4}
+              />
+              <div className="flex items-center justify-between mt-2">
+                <p className="text-xs text-surface-500">
+                  {customPrompt.trim() === ''
+                    ? 'AI agents will apply autonomous default analysis based on retail benchmarks.'
+                    : 'Custom instructions will guide the AI agents during analysis.'}
+                </p>
+                <span className={`text-xs font-mono ${customPrompt.length > 450 ? 'text-yellow-400' : 'text-surface-600'}`}>
+                  {customPrompt.length}/500
+                </span>
+              </div>
+            </motion.div>
 
             {/* Agent Pipeline */}
             <div className="rounded-2xl border border-surface-800 bg-surface-900/50 p-6 space-y-4">
