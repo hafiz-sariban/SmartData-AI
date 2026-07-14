@@ -6,6 +6,7 @@ import { DashboardPage } from './pages/DashboardPage';
 import { DataUploadPage } from './pages/DataUploadPage';
 import { AnalysisHubPage } from './pages/AnalysisHubPage';
 import { MarketingPage } from './pages/MarketingPage';
+import { RevenueRecoveryPage } from './pages/RevenueRecoveryPage';
 import { SettingsPage } from './pages/SettingsPage';
 
 function AppLayout() {
@@ -21,6 +22,7 @@ function AppLayout() {
             <Route path="/upload" element={<DataUploadPage />} />
             <Route path="/analysis" element={<AnalysisHubPage />} />
             <Route path="/marketing" element={<MarketingPage />} />
+            <Route path="/recovery" element={<RevenueRecoveryPage />} />
             <Route path="/settings" element={<SettingsPage />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>

@@ -14,6 +14,7 @@ import {
   Zap,
   Crown,
   Sparkles,
+  Rocket,
 } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
@@ -22,6 +23,7 @@ const navItems = [
   { icon: Upload, label: 'Upload Data', path: '/upload' },
   { icon: BrainCircuit, label: 'AI Analysis Hub', path: '/analysis' },
   { icon: Megaphone, label: 'Marketing Strategy', path: '/marketing' },
+  { icon: Rocket, label: 'Revenue Recovery', path: '/recovery' },
   { icon: Settings, label: 'Settings', path: '/settings' },
 ];
 
