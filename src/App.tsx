@@ -7,6 +7,7 @@ import { DataUploadPage } from './pages/DataUploadPage';
 import { AnalysisHubPage } from './pages/AnalysisHubPage';
 import { MarketingPage } from './pages/MarketingPage';
 import { RevenueRecoveryPage } from './pages/RevenueRecoveryPage';
+import { DemandForecasterPage } from './pages/DemandForecasterPage';
 import { SettingsPage } from './pages/SettingsPage';
 
 function AppLayout() {
@@ -23,6 +24,7 @@ function AppLayout() {
             <Route path="/analysis" element={<AnalysisHubPage />} />
             <Route path="/marketing" element={<MarketingPage />} />
             <Route path="/recovery" element={<RevenueRecoveryPage />} />
+            <Route path="/demand-forecaster" element={<DemandForecasterPage />} />
             <Route path="/settings" element={<SettingsPage />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>

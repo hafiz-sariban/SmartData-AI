@@ -15,6 +15,7 @@ import {
   Crown,
   Sparkles,
   Rocket,
+  PackageSearch,
 } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
@@ -24,6 +25,7 @@ const navItems = [
   { icon: BrainCircuit, label: 'AI Analysis Hub', path: '/analysis' },
   { icon: Megaphone, label: 'Marketing Strategy', path: '/marketing' },
   { icon: Rocket, label: 'Revenue Recovery', path: '/recovery' },
+  { icon: PackageSearch, label: 'Demand Forecaster', path: '/demand-forecaster' },
   { icon: Settings, label: 'Settings', path: '/settings' },
 ];
 
