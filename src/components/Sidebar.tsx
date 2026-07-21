@@ -16,6 +16,7 @@ import {
   Sparkles,
   Rocket,
   PackageSearch,
+  Smartphone,
 } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
@@ -26,6 +27,7 @@ const navItems = [
   { icon: Megaphone, label: 'Marketing Strategy', path: '/marketing' },
   { icon: Rocket, label: 'Revenue Recovery', path: '/recovery' },
   { icon: PackageSearch, label: 'Demand Forecaster', path: '/demand-forecaster' },
+  { icon: Smartphone, label: 'Micro Dashboard', path: '/micro-dashboard' },
   { icon: Settings, label: 'Settings', path: '/settings' },
 ];
 

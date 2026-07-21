@@ -8,7 +8,9 @@ import { AnalysisHubPage } from './pages/AnalysisHubPage';
 import { MarketingPage } from './pages/MarketingPage';
 import { RevenueRecoveryPage } from './pages/RevenueRecoveryPage';
 import { DemandForecasterPage } from './pages/DemandForecasterPage';
+import { MicroDashboardPage } from './pages/MicroDashboardPage';
 import { SettingsPage } from './pages/SettingsPage';
+import { MicroStoreProvider } from './lib/microStore';
 
 function AppLayout() {
   const [chatOpen, setChatOpen] = useState(false);
@@ -25,6 +27,7 @@ function AppLayout() {
             <Route path="/marketing" element={<MarketingPage />} />
             <Route path="/recovery" element={<RevenueRecoveryPage />} />
             <Route path="/demand-forecaster" element={<DemandForecasterPage />} />
+            <Route path="/micro-dashboard" element={<MicroStoreProvider><MicroDashboardPage /></MicroStoreProvider>} />
             <Route path="/settings" element={<SettingsPage />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
