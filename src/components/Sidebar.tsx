@@ -17,7 +17,6 @@ import {
   Rocket,
   PackageSearch,
   Smartphone,
-  Bot,
 } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
