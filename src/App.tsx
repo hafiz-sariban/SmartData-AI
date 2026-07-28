@@ -9,8 +9,10 @@ import { MarketingPage } from './pages/MarketingPage';
 import { RevenueRecoveryPage } from './pages/RevenueRecoveryPage';
 import { DemandForecasterPage } from './pages/DemandForecasterPage';
 import { MicroDashboardPage } from './pages/MicroDashboardPage';
+import { AICMOPage } from './pages/AICMOPage';
 import { SettingsPage } from './pages/SettingsPage';
 import { MicroStoreProvider } from './lib/microStore';
+import { CmoStoreProvider } from './lib/cmoStore';
 
 function AppLayout() {
   const [chatOpen, setChatOpen] = useState(false);
@@ -28,6 +30,7 @@ function AppLayout() {
             <Route path="/recovery" element={<RevenueRecoveryPage />} />
             <Route path="/demand-forecaster" element={<DemandForecasterPage />} />
             <Route path="/micro-dashboard" element={<MicroStoreProvider><MicroDashboardPage /></MicroStoreProvider>} />
+            <Route path="/ai-cmo" element={<CmoStoreProvider><AICMOPage /></CmoStoreProvider>} />
             <Route path="/settings" element={<SettingsPage />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
